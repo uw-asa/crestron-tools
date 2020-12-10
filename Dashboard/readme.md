@@ -68,3 +68,35 @@ INSERT INTO ClassroomTechData.dbo.log_DeviceUsage
 		)
 		AND ClassroomTechData.dbo.v_CRV_log_DeviceUsage.LogTimeStamp > DATEADD(day, -5, GETUTCDATE())
 ```
+
+## Tableau Workbook
+
+### Create new Tableau Workbook
+Connect to data source SQL ClassroomTechData, use table log_DeviceUsage
+
+
+### Create new Tableau Worksheet
+
+Add to columns: _Local Start Time_
+
+Set _Local Start Time_ = 
+```
+Calculated Field: Duration Hours  = [Duration Minutes]/60Rows = SUM([Duration Hours]) / TOTAL(SUM([Duration Hours]))
+```
+
+Set chart type to Area Chart
+
+Add filter of _Room Name_
+Add filter of _DeviceType_
+
+Create group from _Device Name_
+Group similar devices together
+Filter on new group
+Manual sort on new group
+Add new group to color marks, and labels
+
+Change rows to compute using group
+
+Set axis to percentage
+
+
