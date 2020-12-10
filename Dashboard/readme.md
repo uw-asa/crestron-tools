@@ -18,7 +18,9 @@ This project requires SQL read access to the Fusion database.
 
 ## Microsoft SQL Setup
 
-### Create new database and create table log_DeviceUsage
+### Create new database ClassroomTechData 
+
+### Create new table log_DeviceUsage
 ```
 CREATE TABLE [dbo].[log_DeviceUsage](
 	[LogID] [varchar](50) NOT NULL,
