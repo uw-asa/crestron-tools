@@ -19,6 +19,7 @@ This project requires SQL read access to the Fusion database.
 ## Microsoft SQL Setup
 
 ### Create new database ClassroomTechData 
+This database holds new views and tables.
 
 ### Create new view v_CRV_log_DeviceUsage
 This view provides a filtered and condensed version of the Fusion Usage Log.
