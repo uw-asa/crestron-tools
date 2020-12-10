@@ -20,8 +20,6 @@ This project requires SQL read access to the Fusion database.
 
 ### Create new database ClassroomTechData 
 
-
-
 ### Create new view v_CRV_log_DeviceUsage
 This view provides a filtered and condensed version of the Fusion Usage Log.
 ```
@@ -41,6 +39,7 @@ WHERE	(CrestronFusion.dbo.CRV_UsageLog.DataType = 'USAGE') AND (CrestronFusion.d
 ```
 
 ### Create new table log_DeviceUsage
+This table holds the filtered and condensed version of the Fusion Usage Log.  The separate table allows for faster queries, and for old data in the Fusion Usage Log to be purged.
 ```
 CREATE TABLE [dbo].[log_DeviceUsage](
 	[LogID] [varchar](50) NOT NULL,
@@ -54,4 +53,17 @@ CREATE TABLE [dbo].[log_DeviceUsage](
 )
 ```
 
-### Create 
+### Create SQL Server Agent Job 
+This job populates the log_DeviceUsage table with new data. It should be scheduled reoccurring.
+```
+INSERT INTO ClassroomTechData.dbo.log_DeviceUsage
+	SELECT *
+	FROM ClassroomTechData.dbo.v_CRV_log_DeviceUsage
+	WHERE NOT EXISTS
+		(
+			SELECT 1
+			FROM ClassroomTechData.dbo.log_DeviceUsage
+			WHERE log_DeviceUsage.LogID = v_CRV_log_DeviceUsage.LogID
+		)
+		AND ClassroomTechData.dbo.v_CRV_log_DeviceUsage.LogTimeStamp > DATEADD(day, -5, GETUTCDATE())
+```
