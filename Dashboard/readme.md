@@ -2,6 +2,10 @@
 
 UW Crestron Dashboard provides device use metrics, using Crestron Programming, Crestron Fusion, Microsoft SQL, and Tableau.
 
+
+![Tableau Dashboard graph, showing device usage over time](./readme_img_TableauReportExample.png?raw=true "Tableau Dashboard")
+
+
 ## Crestron Controller Programming
 
 Include and program for the Crestron Fusion Device Usage Module.
