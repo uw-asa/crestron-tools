@@ -1,3 +1,14 @@
 # UW Crestron Dashboard
 
 UW Crestron Dashboard provides device use metrics, using Crestron Programming, Crestron Fusion, Microsoft SQL, and Tableau.
+
+## Crestron Controller Programming
+
+Include and program for the Crestron Fusion Device Usage Module.
+
+Crestron Answer ID 5757 - How To Program Fusion SSI Modules for Crestron Fusion
+https://support.crestron.com/app/answers/detail/a_id/5757/
+
+Crestron Answer ID 5758 - How To Program Fusion SSI Modules for Crestron Fusion (Guided Assistance)
+https://support.crestron.com/app/answers/detail/a_id/5758/
+
