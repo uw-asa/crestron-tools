@@ -20,6 +20,26 @@ This project requires SQL read access to the Fusion database.
 
 ### Create new database ClassroomTechData 
 
+
+
+### Create new view v_CRV_log_DeviceUsage
+
+```
+CREATE VIEW ClassroomTechData.dbo.v_CRV_log_DeviceUsage
+AS
+SELECT    CrestronFusion.dbo.CRV_UsageLog.LogID
+		, CrestronFusion.dbo.CRV_UsageLog.LogTimeStamp
+		, DATEADD(minute, - CrestronFusion.dbo.CRV_UsageLog.Data5, CAST(GETDATE() - GetUtcDate() + CrestronFusion.dbo.CRV_UsageLog.LogTimeStamp AS datetime)) AS Local_StartTime
+		, CAST(GETDATE() - GetUtcDate() + CrestronFusion.dbo.CRV_UsageLog.LogTimeStamp AS datetime) AS Local_EndTime
+		, CrestronFusion.dbo.CRV_Rooms.RoomName
+		, CrestronFusion.dbo.CRV_UsageLog.Data2 AS DeviceType
+		, CrestronFusion.dbo.CRV_UsageLog.Data3 AS DeviceName
+		, CrestronFusion.dbo.CRV_UsageLog.Data5 AS DurationMinutes
+FROM	CrestronFusion.dbo.CRV_UsageLog 
+		INNER JOIN CrestronFusion.dbo.CRV_Rooms ON CrestronFusion.dbo.CRV_Rooms.RoomID = CrestronFusion.dbo.CRV_UsageLog.RoomID
+WHERE	(CrestronFusion.dbo.CRV_UsageLog.DataType = 'USAGE') AND (CrestronFusion.dbo.CRV_UsageLog.Data1 = 'TIME')
+```
+
 ### Create new table log_DeviceUsage
 ```
 CREATE TABLE [dbo].[log_DeviceUsage](
