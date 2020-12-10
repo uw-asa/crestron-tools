@@ -70,3 +70,6 @@ INSERT INTO ClassroomTechData.dbo.log_DeviceUsage
 ```
 
 ## Tableau Workbook
+
+### Create new Tableau Workbook
+Connect to data source SQL ClassroomTechData, use table log_DeviceUsage
