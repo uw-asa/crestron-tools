@@ -16,3 +16,18 @@ https://support.crestron.com/app/answers/detail/a_id/5758/
 
 This project requires SQL read access to the Fusion database.
 
+## Microsoft SQL Setup
+
+### Create new database and create table log_DeviceUsage
+```
+CREATE TABLE [dbo].[log_DeviceUsage](
+	[LogID] [varchar](50) NOT NULL,
+	[LogTimeStamp] [datetime] NOT NULL,
+	[Local_StartTime] [datetime] NOT NULL,
+	[Local_EndTime] [datetime] NOT NULL,
+	[RoomName] [nvarchar](128) NOT NULL,
+	[DeviceType] [nvarchar](255) NOT NULL,
+	[DeviceName] [nvarchar](255) NOT NULL,
+	[DurationMinutes] [int] NOT NULL
+)
+```
