@@ -23,7 +23,7 @@ This project requires SQL read access to the Fusion database.
 
 
 ### Create new view v_CRV_log_DeviceUsage
-
+This view provides a filtered and condensed version of the Fusion Usage Log.
 ```
 CREATE VIEW ClassroomTechData.dbo.v_CRV_log_DeviceUsage
 AS
@@ -53,3 +53,5 @@ CREATE TABLE [dbo].[log_DeviceUsage](
 	[DurationMinutes] [int] NOT NULL
 )
 ```
+
+### Create 
