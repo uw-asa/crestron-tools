@@ -68,3 +68,5 @@ INSERT INTO ClassroomTechData.dbo.log_DeviceUsage
 		)
 		AND ClassroomTechData.dbo.v_CRV_log_DeviceUsage.LogTimeStamp > DATEADD(day, -5, GETUTCDATE())
 ```
+
+## Tableau Workbook
