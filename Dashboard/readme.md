@@ -85,22 +85,29 @@ Manual sort on new group
 Add new group to color marks, and labels
 ```
 
-```Calculated Field: Duration Hours  = [Duration Minutes]/60```
+```
+Create Calculated Field: Duration Hours  = [Duration Minutes]/60
+```
 
-```Add filter of DeviceType```
-```Add filter of DeviceName (group)```
+```
+Add filter of DeviceType
+Add filter of DeviceName (group)
+Add filter of Room Name
+```
 
-```Add to columns: Local Start Time```
+```
+Add to Columns: Local Start Time
+Add to Rows = SUM([Duration Hours]) / TOTAL(SUM([Duration Hours]))
+Change Rows to compute using Device Nate (group)
+```
 
-```Rows = SUM([Duration Hours]) / TOTAL(SUM([Duration Hours]))```
+```
+Set chart type to Area Chart
+```
 
-```Change rows to compute using group```
-
-```Set chart type to Area Chart```
-
-```Add filter of Room Name```
-
-```Set axis to percentage```
+```
+Set axis to percentage
+```
 
 
 ![Tableau Dashboard graph, showing device usage over time](./readme_img_TableauReportExample.png?raw=true "Tableau Dashboard")
