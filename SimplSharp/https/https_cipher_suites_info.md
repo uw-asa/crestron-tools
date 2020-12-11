@@ -1,12 +1,14 @@
 
 Dec 11, 2020
 
+```
 SIMPL Windows:  4.14.21
 SIMPL+  4.05.01
 Simpl Sharp 2.0.58
 Device Database: 200.20.002.00
 Crestron Database:  202.00.001.00
 CP3N Firmware: 1.601.3935.27221
+```
 
 Results from https://www.howsmyssl.com/a/check
 
