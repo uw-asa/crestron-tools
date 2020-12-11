@@ -77,27 +77,29 @@ Connect to data source SQL ClassroomTechData, use table log_DeviceUsage
 
 ### Create new Tableau Worksheet
 
-Add to columns: _Local Start Time_
+```Add to columns: Local Start Time```
 
-Set _Local Start Time_ = 
+```Set Local Start Time = Calculated Field: Duration Hours  = [Duration Minutes]/60```
+
+```Rows = SUM([Duration Hours]) / TOTAL(SUM([Duration Hours]))```
+
+```Set chart type to Area Chart```
+
+```Add filter of Room Name```
+
+```Add filter of DeviceType```
+
 ```
-Calculated Field: Duration Hours  = [Duration Minutes]/60Rows = SUM([Duration Hours]) / TOTAL(SUM([Duration Hours]))
-```
-
-Set chart type to Area Chart
-
-Add filter of _Room Name_
-Add filter of _DeviceType_
-
-Create group from _Device Name_
+Create group from Device Name
 Group similar devices together
 Filter on new group
 Manual sort on new group
 Add new group to color marks, and labels
+```
 
-Change rows to compute using group
+```Change rows to compute using group```
 
-Set axis to percentage
+```Set axis to percentage```
 
 
 ![Tableau Dashboard graph, showing device usage over time](./readme_img_TableauReportExample.png?raw=true "Tableau Dashboard")
